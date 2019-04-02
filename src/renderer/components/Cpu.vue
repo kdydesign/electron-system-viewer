@@ -67,7 +67,6 @@
 <script>
   export default {
     name: 'Cpu',
-    mixins: [],
     data () {
       return {
         interval: void 0,
@@ -99,24 +98,14 @@
         }
       }
     },
-    computed: {},
-    beforeCreate () {},
     created () {
       this.getCpuData()
       this.interval = setInterval(() => this.getCpuData(), 1000)
     },
-    beforeMount () {},
-    mounted () {},
-    beforeUpdate () {},
-    updated () {},
-    activated () {},
-    deactivated () {},
     beforeDestroy () {
       clearInterval(this.interval)
       this.interval = void 0
     },
-    destroyed () {},
-    errorCaptured () {},
     methods: {
       getCpuData () {
         const cpuUsed = process.cpuUsage()
@@ -141,7 +130,6 @@
           })
         })
       }
-    },
-    watch: {}
+    }
   }
 </script>

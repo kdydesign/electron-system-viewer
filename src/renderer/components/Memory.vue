@@ -23,9 +23,6 @@
 <script>
   export default {
     name: 'Memory',
-    components: {},
-    directives: {},
-    mixins: [],
     data () {
       return {
         interval: void 0,
@@ -41,24 +38,14 @@
         }
       }
     },
-    computed: {},
-    beforeCreate () {},
     created () {
       this.getMemData()
       this.interval = setInterval(() => this.getMemData(), 1000)
     },
-    beforeMount () {},
-    mounted () {},
-    beforeUpdate () {},
-    updated () {},
-    activated () {},
-    deactivated () {},
     beforeDestroy () {
       clearInterval(this.interval)
       this.interval = void 0
     },
-    destroyed () {},
-    errorCaptured () {},
     methods: {
       getMemData () {
         const memUsed = process.memoryUsage()
@@ -70,7 +57,6 @@
         this.memData.push({name: 'heapUsed', used: memUsed.heapUsed})
         this.memData.push({name: 'rss', used: memUsed.rss})
       }
-    },
-    watch: {}
+    }
   }
 </script>

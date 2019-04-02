@@ -25,8 +25,6 @@
 <script>
   export default {
     name: 'System',
-    directives: {},
-    mixins: [],
     data () {
       return {
         sysData: [],
@@ -41,19 +39,9 @@
         }
       }
     },
-    beforeCreate () {},
     created () {
       this.getSysData()
     },
-    beforeMount () {},
-    mounted () {},
-    beforeUpdate () {},
-    updated () {},
-    activated () {},
-    deactivated () {},
-    beforeDestroy () {},
-    destroyed () {},
-    errorCaptured () {},
     methods: {
       getSysData () {
         import('os').then((result) => {
@@ -66,7 +54,6 @@
           this.sysData.push({name: 'arch', sysData: result.arch()})
         })
       }
-    },
-    watch: {}
+    }
   }
 </script>
