@@ -15,8 +15,7 @@
         :pagination.sync="serverPagination"
         row-key="name"
         hide-header
-        hide-bottom
-    />
+        hide-bottom/>
   </q-page>
 </template>
 
