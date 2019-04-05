@@ -8,14 +8,14 @@
     </q-page-sticky>
 
     <q-table
-        title="Memory 사용률"
-        :data="memData"
-        :columns="memColumns"
-        :rows-per-page-options="[0]"
-        :pagination.sync="serverPagination"
-        row-key="name"
-        hide-header
-        hide-bottom/>
+      title="Memory 사용률"
+      :data="memData"
+      :columns="memColumns"
+      :rows-per-page-options="[0]"
+      :pagination.sync="serverPagination"
+      row-key="name"
+      hide-header
+      hide-bottom/>
   </q-page>
 </template>
 
@@ -27,8 +27,8 @@
         interval: void 0,
         memData: [],
         memColumns: [
-          {field: 'name', label: '이름', align: 'left'},
-          {field: 'used', label: '값', align: 'left', format: val => val.toLocaleString()}
+          { field: 'name', label: '이름', align: 'left' },
+          { field: 'used', label: '값', align: 'left', format: val => val.toLocaleString() }
         ],
         serverPagination: {
           page: 1,
@@ -51,10 +51,10 @@
 
         this.memData = []
 
-        this.memData.push({name: 'external', used: memUsed.external})
-        this.memData.push({name: 'heapTotal', used: memUsed.heapTotal})
-        this.memData.push({name: 'heapUsed', used: memUsed.heapUsed})
-        this.memData.push({name: 'rss', used: memUsed.rss})
+        this.memData.push({ name: 'external', used: memUsed.external })
+        this.memData.push({ name: 'heapTotal', used: memUsed.heapTotal })
+        this.memData.push({ name: 'heapUsed', used: memUsed.heapUsed })
+        this.memData.push({ name: 'rss', used: memUsed.rss })
       }
     }
   }

@@ -26,7 +26,7 @@ function createWindow () {
     minHeight: 500,
     useContentSize: true,
     width: 1200,
-    darkTheme: true,
+    darkTheme: true
   })
 
   mainWindow.setTitle('System Dashboard v1.0')

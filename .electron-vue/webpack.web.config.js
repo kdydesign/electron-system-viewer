@@ -9,7 +9,7 @@ const BabiliWebpackPlugin = require('babili-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {VueLoaderPlugin} = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader')
 
 let webConfig = {
   devtool: '#cheap-module-eval-source-map',
@@ -77,7 +77,7 @@ let webConfig = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({filename: 'styles.css'}),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),
@@ -115,20 +115,20 @@ if (process.env.NODE_ENV === 'production') {
   webConfig.devtool = ''
 
   webConfig.plugins.push(
-      new BabiliWebpackPlugin(),
-      new CopyWebpackPlugin([
-        {
-          from: path.join(__dirname, '../static'),
-          to: path.join(__dirname, '../dist/web/static'),
-          ignore: ['.*']
-        }
-      ]),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"'
-      }),
-      new webpack.LoaderOptionsPlugin({
-        minimize: true
-      })
+    new BabiliWebpackPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, '../static'),
+        to: path.join(__dirname, '../dist/web/static'),
+        ignore: ['.*']
+      }
+    ]),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
   )
 }
 

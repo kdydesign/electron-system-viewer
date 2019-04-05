@@ -27,7 +27,7 @@ Vue.use(Quasar, {
 })
 /* eslint-disable no-new */
 new Vue({
-  components: {App},
+  components: { App },
   router,
   store,
   template: '<App/>'

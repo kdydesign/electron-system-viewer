@@ -29,7 +29,6 @@
         </q-toolbar>
       </q-layout-header>
 
-
       <q-page-container>
         <q-layout-drawer side="left"
                          :overlay="false"
@@ -99,7 +98,7 @@
       return {
         left: false
       }
-    },
+    }
   }
 </script>
 

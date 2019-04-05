@@ -9,15 +9,14 @@
 
     <div>
       <div class="basic-sys-info">
-        <q-table
-            grid
-            hide-header
-            hide-bottom
-            :rows-per-page-options="[0]"
-            :pagination.sync="serverPagination"
-            :data="cpuData"
-            :columns="cpuColumns"
-            row-key="name"
+        <q-table grid
+                 hide-header
+                 hide-bottom
+                 :rows-per-page-options="[0]"
+                 :pagination.sync="serverPagination"
+                 :data="cpuData"
+                 :columns="cpuColumns"
+                 row-key="name"
         >
           <div slot="item"
                slot-scope="props"
@@ -49,15 +48,14 @@
       </div>
 
       <div class="cpu-sys-info">
-        <q-table
-            title="CPU 사용률"
-            :data="useCpuData"
-            :columns="useCpuColumns"
-            :rows-per-page-options="[0]"
-            :pagination.sync="serverPagination"
-            row-key="name"
-            hide-header
-            hide-bottom/>
+        <q-table title="CPU 사용률"
+                 :data="useCpuData"
+                 :columns="useCpuColumns"
+                 :rows-per-page-options="[0]"
+                 :pagination.sync="serverPagination"
+                 row-key="name"
+                 hide-header
+                 hide-bottom/>
       </div>
     </div>
   </q-page>
@@ -71,8 +69,8 @@
         interval: void 0,
         useCpuData: [],
         useCpuColumns: [
-          {field: 'name', label: '이름', align: 'left'},
-          {field: 'used', label: '값', align: 'left', format: val => val.toLocaleString()}
+          { field: 'name', label: '이름', align: 'left' },
+          { field: 'used', label: '값', align: 'left', format: val => val.toLocaleString() }
         ],
         cpuData: [],
         cpuColumns: [
@@ -84,11 +82,11 @@
             sortable: true,
             format: val => val.toLocaleString()
           },
-          {name: 'idle', label: 'idle', field: 'idle', format: val => val.toLocaleString()},
-          {name: 'irq', label: 'irq', field: 'irq', format: val => val.toLocaleString()},
-          {name: 'nice', label: 'nice', field: 'nice', format: val => val.toLocaleString()},
-          {name: 'sys', label: 'sys', field: 'sys', format: val => val.toLocaleString()},
-          {name: 'user', label: 'user', field: 'user', format: val => val.toLocaleString()},
+          { name: 'idle', label: 'idle', field: 'idle', format: val => val.toLocaleString() },
+          { name: 'irq', label: 'irq', field: 'irq', format: val => val.toLocaleString() },
+          { name: 'nice', label: 'nice', field: 'nice', format: val => val.toLocaleString() },
+          { name: 'sys', label: 'sys', field: 'sys', format: val => val.toLocaleString() },
+          { name: 'user', label: 'user', field: 'user', format: val => val.toLocaleString() }
         ],
         serverPagination: {
           page: 1,
@@ -112,8 +110,8 @@
         this.useCpuData = []
         this.cpuData = []
 
-        this.useCpuData.push({name: 'System', used: cpuUsed.system})
-        this.useCpuData.push({name: 'User', used: cpuUsed.user})
+        this.useCpuData.push({ name: 'System', used: cpuUsed.system })
+        this.useCpuData.push({ name: 'User', used: cpuUsed.user })
 
         import('os').then((result) => {
           result.cpus().forEach((v, i) => {
